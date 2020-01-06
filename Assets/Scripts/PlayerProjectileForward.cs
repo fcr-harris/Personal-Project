@@ -5,11 +5,6 @@ using UnityEngine;
 public class PlayerProjectileForward : MonoBehaviour
 {
     public float speed = 0.7f;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
     // Update is called once per frame
     void Update()
@@ -20,10 +15,11 @@ public class PlayerProjectileForward : MonoBehaviour
         //destroy off screen
         float rightBound = 12.5f;
 
-        if(transform.position.x > rightBound)
-        {
+        if(transform.position.x > rightBound){
             Destroy(gameObject);
         }
     }
+
+    
     
 }
