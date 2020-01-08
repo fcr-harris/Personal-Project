@@ -5,10 +5,11 @@ using UnityEngine;
 public class AlienSpawnManager : MonoBehaviour
 {
     public GameObject[] alienPrefabs;
-    private float spawnRangeX = 20;
-    private float spawnPosZ = 20;
-    private float startDelay = 2;
-    private float spawnInterval = 1.5f;
+    private float spawnPosX = 14;
+    private float spawnRangeY = 4;
+    private float spawnPosZ = 0;
+    private float startDelay = 5;
+    private float spawnInterval = 2.3f;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,8 +24,8 @@ public class AlienSpawnManager : MonoBehaviour
 
     void SpawnRandomAliens()
     {
-        Vector3 spawnPos = new Vector3(Random.Range(-spawnRangeX,spawnRangeX), 0, spawnPosZ);
+        Vector3 spawnPos = new Vector3(spawnPosX, Random.Range(-spawnRangeY,spawnRangeY), spawnPosZ);
         int alienIndex = Random.Range(0, alienPrefabs.Length);
-        Instantiate(alienPrefabs[alienIndex], new Vector3(0,0,20),alienPrefabs[alienIndex].transform.rotation);
+        Instantiate(alienPrefabs[alienIndex], spawnPos, alienPrefabs[alienIndex].transform.rotation);
     }
 }
