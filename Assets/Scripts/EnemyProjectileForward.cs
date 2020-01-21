@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class EnemyProjectileForward : MonoBehaviour
 {
+    public float speed = 10f;
     // Start is called before the first frame update
     void Start()
     {
@@ -13,6 +14,6 @@ public class EnemyProjectileForward : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        transform.Translate(Vector3.left * Time.deltaTime * speed);
     }
 }

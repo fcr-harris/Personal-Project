@@ -16,7 +16,11 @@ public class AlienShootBullet : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        float rightBound = -12.5f;
+
+        if(transform.position.x < rightBound){
+            Destroy(gameObject);
+        }
     }
 
     void ShootBullet()
