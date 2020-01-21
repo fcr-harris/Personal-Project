@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class AlienShootBullet : MonoBehaviour
 {
-    private float shootDelay = 1.3f;
-    private float shootInterval = 2f;
+    private float shootDelay = 1.2f;
+    private float shootInterval = 1.3f;
     public GameObject EnemyBullet;
     
     // Start is called before the first frame update
