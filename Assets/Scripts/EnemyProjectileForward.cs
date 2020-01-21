@@ -5,6 +5,7 @@ using UnityEngine;
 public class EnemyProjectileForward : MonoBehaviour
 {
     public float speed = 10f;
+    public float leftBound = -13f;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,5 +16,9 @@ public class EnemyProjectileForward : MonoBehaviour
     void Update()
     {
         transform.Translate(Vector3.left * Time.deltaTime * speed);
+
+         if(transform.position.x < leftBound){
+            Destroy(gameObject);
+        }
     }
 }

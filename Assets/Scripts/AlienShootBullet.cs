@@ -7,6 +7,7 @@ public class AlienShootBullet : MonoBehaviour
     private float shootDelay = 1.3f;
     private float shootInterval = 2f;
     public GameObject EnemyBullet;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -16,11 +17,7 @@ public class AlienShootBullet : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float rightBound = -12.5f;
-
-        if(transform.position.x < rightBound){
-            Destroy(gameObject);
-        }
+       
     }
 
     void ShootBullet()
