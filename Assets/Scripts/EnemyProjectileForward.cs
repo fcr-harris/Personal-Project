@@ -15,6 +15,11 @@ public class EnemyProjectileForward : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (gameObject.CompareTag("EnemyBulletAlt")){
+            
+            transform.Translate((Vector3.left + Vector3.up) * Time.deltaTime * (speed+2));
+        }
+
         transform.Translate(Vector3.left * Time.deltaTime * speed);
 
          if(transform.position.x < leftBound){

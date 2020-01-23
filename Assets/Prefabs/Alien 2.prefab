@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 6229012922417245408}
   - component: {fileID: 6229012922417245411}
   - component: {fileID: 6229012922417245409}
+  - component: {fileID: 114946077714804652}
   m_Layer: 0
   m_Name: Alien 2
   m_TagString: Untagged
@@ -136,3 +137,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0.12
+--- !u!114 &114946077714804652
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6229012922417245422}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abfde905c0afbbf45a420755a46aaca8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EnemyBulletAlt: {fileID: 454409125328639656, guid: ad49f54dad5e48e4994d53f365afca3e,
+    type: 3}
