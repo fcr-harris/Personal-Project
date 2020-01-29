@@ -5,8 +5,8 @@ using UnityEngine;
 public class Alien2ShootBullet : MonoBehaviour
 {
     private float shootDelay = 1.2f;
-    private float shootInterval = 1.3f;
-    public GameObject EnemyBulletAlt;
+    private float shootInterval = 0.8f;
+    public GameObject EnemyBullet;
     
     // Start is called before the first frame update
     void Start()
@@ -22,6 +22,6 @@ public class Alien2ShootBullet : MonoBehaviour
 
     void ShootBullet()
     {
-        Instantiate(EnemyBulletAlt, transform.position, EnemyBulletAlt.transform.rotation);
+        Instantiate(EnemyBullet, transform.position, EnemyBullet.transform.rotation);
     }
 }

@@ -4,12 +4,17 @@ using UnityEngine;
 
 public class AlienDetectCollisions : MonoBehaviour
 {
-    public float Health = 3;
+    public float Health = 5;
 
+    void Start(){
+        if(gameObject.name == "Alien"){
+            Health -= 2;
+        }
+    }
     void OnTriggerEnter(Collider other)
     {
         if(other.gameObject.name == "Player Projectile(Clone)"){
-            Health = Health - 1;
+            Health -= 1;
             Destroy(other.gameObject);
         }
 
