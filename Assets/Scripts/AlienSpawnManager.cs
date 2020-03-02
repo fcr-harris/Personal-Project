@@ -4,28 +4,39 @@ using UnityEngine;
 
 public class AlienSpawnManager : MonoBehaviour
 {
-    public GameObject[] alienPrefabs;
-    private float spawnPosX = 14;
-    private float spawnRangeY = 4;
-    private float spawnPosZ = 0;
-    private float startDelay = 5;
-    private float spawnInterval = 2.3f;
+    public GameObject alien;
+    public int enemyCount;
+    public int waveNumber = 1;
     // Start is called before the first frame update
     void Start()
     {
-        InvokeRepeating("SpawnRandomAliens",startDelay,spawnInterval);
+
     }
 
     // Update is called once per frame
     void Update()
     {
+       enemyCount = FindObjectsOfType<AlienDetectCollisions>().Length;
+            if (enemyCount == 0){
+                waveNumber ++;
+                SpawnEnemyWave(waveNumber);
+            }
        
     }
-
-    void SpawnRandomAliens()
+    
+    Vector3 GenerateSpawnPosition()
     {
-        Vector3 spawnPos = new Vector3(spawnPosX, Random.Range(-spawnRangeY,spawnRangeY), spawnPosZ);
-        int alienIndex = Random.Range(0, alienPrefabs.Length);
-        Instantiate(alienPrefabs[alienIndex], spawnPos, alienPrefabs[alienIndex].transform.rotation);
+        float spawnPosX = 15;
+        float spawnRangeY = Random.Range(-4,4);
+
+        Vector3 randomPos = new Vector3(spawnPosX,spawnRangeY,0);
+
+        return randomPos;
+    }
+
+    void SpawnEnemyWave(int enemiesToSpawn){
+        for (int i = 0; i < enemiesToSpawn; i++){
+            Instantiate(alien,GenerateSpawnPosition(),alien.transform.rotation);
+        }
     }
 }

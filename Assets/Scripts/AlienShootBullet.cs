@@ -5,12 +5,12 @@ using UnityEngine;
 public class AlienShootBullet : MonoBehaviour
 {
     private float shootDelay = 1.2f;
-    private float shootInterval = 1.3f;
     public GameObject EnemyBullet;
     
     // Start is called before the first frame update
     void Start()
     {
+        float shootInterval = Random.Range(1,2.3);
         InvokeRepeating("ShootBullet",shootDelay,shootInterval);
     }
 
