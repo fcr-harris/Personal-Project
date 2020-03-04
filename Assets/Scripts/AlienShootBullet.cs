@@ -10,8 +10,8 @@ public class AlienShootBullet : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        float shootInterval = Random.Range(1,2.3);
-        InvokeRepeating("ShootBullet",shootDelay,shootInterval);
+        
+        InvokeRepeating("ShootBullet",shootDelay,Random.Range(1,3));
     }
 
     // Update is called once per frame

@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class Alien2ShootBullet : MonoBehaviour
 {
+
+    //https://www.youtube.com/watch?v=NivKaNN7I00 this is a 2d tutorial? but might be helpful as a starting point
+
     private float shootDelay = 1.2f;
     private float shootInterval = 0.8f;
     public GameObject EnemyBullet;
