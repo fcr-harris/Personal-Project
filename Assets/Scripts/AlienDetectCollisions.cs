@@ -18,6 +18,11 @@ public class AlienDetectCollisions : MonoBehaviour
             Destroy(other.gameObject);
         }
 
+        if(other.gameObject.name == "Player Projectile Powered(Clone)"){
+            Destroy(gameObject);
+            Destroy(other.gameObject);
+        }
+
        if(Health <= 0){
            Destroy(gameObject);
        }

@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerDetectCollisions : MonoBehaviour
 {
     public float playerLives = 3;
-    public bool hasPowerUp = false;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -27,9 +27,6 @@ public class PlayerDetectCollisions : MonoBehaviour
             Destroy(other.gameObject);
         }
 
-        if(other.gameObject.name == "PowerUp(Clone)"){
-            Destroy(other.gameObject);
-            hasPowerUp = true;
-        }
+        
     }
 }
