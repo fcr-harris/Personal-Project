@@ -13,9 +13,7 @@ GameObject:
   - component: {fileID: 6942630751073420340}
   - component: {fileID: 6942630751073420341}
   - component: {fileID: 6942630751073420344}
-  - component: {fileID: 6942630751073420345}
   - component: {fileID: 6942630751073420347}
-  - component: {fileID: 114624167255678870}
   m_Layer: 0
   m_Name: Alien
   m_TagString: enemy
@@ -111,19 +109,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &6942630751073420345
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6942630751073420338}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 524063f4d33e9ed48afedb0f0daf66da, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Health: 3
 --- !u!114 &6942630751073420347
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -137,17 +122,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0.12
---- !u!114 &114624167255678870
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6942630751073420338}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 96456bfb83874ca499442ad1484d6378, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  Health: 3
   EnemyBullet: {fileID: 454409125328639656, guid: b61167c4cdd4cde41bec6a8df6f4d47d,
     type: 3}

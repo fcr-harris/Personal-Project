@@ -2,26 +2,31 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AlienSpawnManager : MonoBehaviour
+public class SpawnManager : MonoBehaviour
 {
+    //prefabs
     public GameObject alien;
     public GameObject powerup;
+    //count enemies and waves
     public int enemyCount;
     public int waveNumber = 1;
+    //spawn positions
     public float spawnPosX = 15;
     public float spawnRangePowerupY = 4;
+    //spawn time
     public float spawnDelay = 25;
     public float spawnInterval = 35f;
     // Start is called before the first frame update
     void Start()
     {
+        //spawn powerups after 25 seconds every 35 seconds
         InvokeRepeating("SpawnPowerUp", spawnDelay, spawnInterval);
     }
 
     // Update is called once per frame
     void Update()
     {
-       enemyCount = FindObjectsOfType<AlienDetectCollisions>().Length;
+       enemyCount = FindObjectsOfType<AlienBehavior>().Length;
             if (enemyCount == 0){
                 waveNumber ++;
                 SpawnEnemyWave(waveNumber);

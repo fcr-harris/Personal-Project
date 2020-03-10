@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerProjectileForward : MonoBehaviour
+public class MoveRight : MonoBehaviour
 {
     public float speed = 0.7f;
 
