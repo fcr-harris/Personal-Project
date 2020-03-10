@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyProjectileForward : MonoBehaviour
+public class MovePowerUp : MonoBehaviour
 {
     public float speed = 10f;
     public float leftBound = -16f;

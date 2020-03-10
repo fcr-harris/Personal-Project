@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyProjectileMove : MonoBehaviour
 {
-    public float speed = 10f;
+    public float speed = 500f;
     public float bounds = 16f;
     private Rigidbody bulletRb;
     private GameObject player;
@@ -20,6 +20,11 @@ public class EnemyProjectileMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(transform.position.x > bounds){
+            Destroy(gameObject);
+        }
+        if(transform.position.x < -bounds){
+            Destroy(gameObject);
+        }
     }
 }
