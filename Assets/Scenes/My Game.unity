@@ -570,6 +570,7 @@ MonoBehaviour:
   shootSoundPowered: {fileID: 8300000, guid: 853dd69d53bf5564b80876f94e9f1e89, type: 3}
   obtainPowerup: {fileID: 8300000, guid: 33271ce18a394a749b88ef1607bce84f, type: 3}
   activatePowerup: {fileID: 8300000, guid: 38697e7c0a821214abdece1d879f0d5f, type: 3}
+  playerDestroyed: {fileID: 8300000, guid: 9c4637033ea955344806acc817931290, type: 3}
 --- !u!54 &967799809
 Rigidbody:
   m_ObjectHideFlags: 0

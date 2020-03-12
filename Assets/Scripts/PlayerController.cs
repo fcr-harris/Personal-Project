@@ -26,7 +26,7 @@ public class PlayerController : MonoBehaviour
     public AudioClip shootSoundPowered;
     public AudioClip obtainPowerup;
     public AudioClip activatePowerup;
-    private AudioClip playerDestroyed;
+    public AudioClip playerDestroyed;
     private AudioSource playerAudio;
 
     //Update is called first frame
