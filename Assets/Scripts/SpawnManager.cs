@@ -26,20 +26,21 @@ public class SpawnManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       enemyCount = FindObjectsOfType<AlienBehavior>().Length;
+        //if all enemies are destroyed, spawn next wave
+        enemyCount = FindObjectsOfType<AlienBehavior>().Length;
             if (enemyCount == 0){
                 waveNumber ++;
                 SpawnEnemyWave(waveNumber);
             }
        
     }
-
+    //generate powerup spawn position and spawn powerup
     void SpawnPowerUp()
     {
         Vector3 spawnPos = new Vector3(spawnPosX, Random.Range(-spawnRangePowerupY,spawnRangePowerupY),0);
         Instantiate(powerup,spawnPos,powerup.transform.rotation);
     }
-    
+    //generate enemy spawn positions
     Vector3 GenerateSpawnPosition()
     {
         float spawnRangeY = Random.Range(-4,4);
@@ -48,7 +49,7 @@ public class SpawnManager : MonoBehaviour
 
         return randomPos;
     }
-
+    //enemy spawn loop
     void SpawnEnemyWave(int enemiesToSpawn){
         for (int i = 0; i < enemiesToSpawn; i++){
             Instantiate(alien,GenerateSpawnPosition(),alien.transform.rotation);
