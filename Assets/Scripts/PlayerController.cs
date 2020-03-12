@@ -26,10 +26,12 @@ public class PlayerController : MonoBehaviour
     public AudioClip shootSoundPowered;
     public AudioClip obtainPowerup;
     public AudioClip activatePowerup;
+    private AudioClip playerDestroyed;
     private AudioSource playerAudio;
 
     //Update is called first frame
     void Start(){
+        //assign playerAudio to the audio source component
         playerAudio = GetComponent<AudioSource>();
     }
 
@@ -99,6 +101,7 @@ public class PlayerController : MonoBehaviour
         if(other.gameObject.name == "Enemy Projectile(Clone)"){
             playerLives -= 1;
             Destroy(other.gameObject);
+            playerAudio.PlayOneShot(playerDestroyed, 1.2f);
         }
     }
     //powerup countdown
