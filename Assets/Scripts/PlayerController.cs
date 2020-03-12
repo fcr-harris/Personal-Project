@@ -21,13 +21,25 @@ public class PlayerController : MonoBehaviour
     public bool powerupActive = false;
     //how many hits the player can take
     public float playerLives = 3;
+    //sound effects
+    public AudioClip shootSound;
+    public AudioClip shootSoundPowered;
+    public AudioClip obtainPowerup;
+    public AudioClip activatePowerup;
+    private AudioSource playerAudio;
+
+    //Update is called first frame
+    void Start(){
+        playerAudio = GetComponent<AudioSource>();
+    }
 
     // Update is called once per frame
     void Update()
     {
         //destroy player when out of lives
         if(playerLives <= 0){
-            Destroy(gameObject);
+            powerupIndicator.gameObject.SetActive(false);
+            gameObject.SetActive(false);
         }
         //Player movement
         horizontalInput = Input.GetAxis("Horizontal");
@@ -37,45 +49,41 @@ public class PlayerController : MonoBehaviour
         //keep powerup indicator on the player
         powerupIndicator.transform.position = transform.position;
         
-        //Keep this loser inbounds
+        //Keep inbounds
         float xPosition = transform.position.x;
         float yPosition = transform.position.y;
         float zPosition = transform.position.z;
 
-        if(transform.position.x < -xRange)
-        {
+        if(transform.position.x < -xRange){
             transform.position = new Vector3(-xRange, yPosition, zPosition);
         }
-        if(transform.position.x > xRange)
-        {
+        if(transform.position.x > xRange){
             transform.position = new Vector3(xRange, yPosition, zPosition);
         }
-        if(transform.position.y < -yRange)
-        {
+        if(transform.position.y < -yRange){
             transform.position = new Vector3(xPosition, -yRange, zPosition);
         }
-        if(transform.position.y > yRange)
-        {
+        if(transform.position.y > yRange){
             transform.position = new Vector3(xPosition, yRange, zPosition);
         }
 
         //Button to activate powerup (Q)
-
         if (Input.GetKeyDown(KeyCode.Q) && hasPowerUp == true){
             powerupIndicator.gameObject.SetActive(false);
             powerupActive = true;
+            playerAudio.PlayOneShot(activatePowerup, 1.0f);
             StartCoroutine(PowerupCountdownRoutine());
         }
         
         //Create projectile on player input (spacebar)
-        if (Input.GetKeyDown(KeyCode.Space) && powerupActive == false)
-        {
+        if (Input.GetKeyDown(KeyCode.Space) && powerupActive == false){
             Instantiate(projectilePrefab, transform.position, projectilePrefab.transform.rotation);
+            playerAudio.PlayOneShot(shootSound, 1.0f);
         }
-
-        if (Input.GetKeyDown(KeyCode.Space) && powerupActive == true)
-        {
+        //If powerup is active, shoot powerup bullets instead
+        if (Input.GetKeyDown(KeyCode.Space) && powerupActive == true){
             Instantiate(projectilePrefabAlt, transform.position, projectilePrefab.transform.rotation);
+            playerAudio.PlayOneShot(shootSoundPowered, 1.0f);
         }
     }
     
@@ -85,6 +93,7 @@ public class PlayerController : MonoBehaviour
             powerupIndicator.gameObject.SetActive(true);
             Destroy(other.gameObject);
             hasPowerUp = true;
+            playerAudio.PlayOneShot(obtainPowerup, 1.0f);
         }
         //detect collisions with enemy bullets, subtract lives
         if(other.gameObject.name == "Enemy Projectile(Clone)"){

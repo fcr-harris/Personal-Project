@@ -15,11 +15,16 @@ public class AlienBehavior : MonoBehaviour
     private float shootDelay = 1.2f;
     public GameObject EnemyBullet;
 
+    //player variable
+    private GameObject player;
+
     // Start is called before the first frame update
     void Start()
     {
+        //find player
+        player = GameObject.Find("Player");
         //invoke shoot once in position at varied intervals
-        InvokeRepeating("ShootBullet",shootDelay,Random.Range(1,3));
+        InvokeRepeating("ShootBullet",shootDelay,Random.Range(0.5f,2.5f));
     }
 
     // Update is called once per frame

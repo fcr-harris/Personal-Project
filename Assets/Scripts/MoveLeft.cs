@@ -16,7 +16,7 @@ public class MoveLeft : MonoBehaviour
     void Update()
     {
         //move left, destroy when outside of the left boundary
-        transform.Translate(speed * Time.deltaTime * Vector3.forward);
+        transform.Translate(speed * Time.deltaTime * Vector3.left);
         
         float leftBound = -16f;
         if(transform.position.x < leftBound){
