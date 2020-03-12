@@ -467,6 +467,7 @@ MonoBehaviour:
   powerupIndicator: {fileID: 668102209}
   hasPowerUp: 0
   powerupActive: 0
+  playerLives: 3
 --- !u!54 &967799809
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -570,6 +571,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1999799688}
   - component: {fileID: 1999799687}
+  - component: {fileID: 1999799689}
   m_Layer: 0
   m_Name: SpawnManager
   m_TagString: Untagged
@@ -587,6 +589,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 75a3dedae008c404991678ba05da5376, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Name: 
+  m_EditorClassIdentifier: 
   m_Name: 
   m_EditorClassIdentifier: 
   alien: {fileID: 6942630751073420338, guid: 57631f1963cefff4686490bafb411305, type: 3}
@@ -611,3 +617,23 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1999799689
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1999799686}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 601c19c851258c344afe7a3764f610cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  alien: {fileID: 6942630751073420338, guid: 57631f1963cefff4686490bafb411305, type: 3}
+  powerup: {fileID: 1779070181192956035, guid: 9298c0eca300fee4185dae3ca4b59504, type: 3}
+  enemyCount: 0
+  waveNumber: 1
+  spawnPosX: 15
+  spawnRangePowerupY: 4
+  spawnDelay: 25
+  spawnInterval: 35
