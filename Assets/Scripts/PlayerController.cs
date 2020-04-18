@@ -20,7 +20,7 @@ public class PlayerController : MonoBehaviour
     public bool hasPowerUp = false;
     public bool powerupActive = false;
     //how many hits the player can take
-    public float playerLives = 3;
+    public float playerLives = 5;
     //sound effects
     public AudioClip shootSound;
     public AudioClip shootSoundPowered;

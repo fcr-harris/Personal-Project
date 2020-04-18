@@ -63,6 +63,8 @@ public class AlienBehavior : MonoBehaviour
     //shoot.
     void ShootBullet()
     {
-        Instantiate(EnemyBullet, transform.position, EnemyBullet.transform.rotation);
+        if(GameObject.Find("Player")){
+            Instantiate(EnemyBullet, transform.position, EnemyBullet.transform.rotation);
+        }
     }
 }
